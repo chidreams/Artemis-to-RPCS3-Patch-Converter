@@ -41,13 +41,109 @@ This is an **alpha release** - while functional, some features may be incomplete
 - Python 3.7 or higher
 - Git (for cloning repository)
 
-### Quick Start
-```bash
-# Clone the repository
-git clone https://github.com/Chidreams/artemis-converter.git
-cd artemis-converter
+🖥️ Usage Guide
+1. Database Setup
 
-# Run the application
-python artemis_converter.py
+    Click "Quick Import NCL" to add individual files
 
+    Use "Batch Import" for entire folders
+
+    "Import Artemis Repo" for existing Artemis databases
+
+2. Browse Cheats
+
+    Switch between "Show Files" and "Show by Game" views
+
+    Use search box to filter results
+
+    Double-click files to view details and cheats
+
+3. Convert to RPCS3 Format
+
+    Select cheats and click "Add Selected Cheats"
+
+    Fill in game metadata (Serial, Name, Version)
+
+    PPU Hash is optional (placeholder used if empty)
+
+    Click "Convert" to generate YAML
+
+4. Save & Export
+
+    "Save YAML File" to export patch
+
+    "Save to Database" for library storage
+
+    Browse saved patches in "My Patches" tab   
+🛠️ Technical Details
+Database Schema
+sql
+
+games:        Game metadata and file information
+cheats:       Individual cheat codes linked to games
+user_patches: Saved RPCS3 patches
+indexed_files: File tracking with hash verification
+
+File Format Support
+
+    Input: .ncl (Artemis cheat files)
+
+    Output: .yaml (RPCS3 1.2 patch format)
+
+    Database: SQLite with WAL mode for performance
+
+YAML Output Format
+yaml
+
+PPU-0000000000000000000000000000000000000000:
+  "Patch Name":
+    Games:
+      "Game Name":
+        BLUS12345: [ "01.00" ]
+    Author: NCL Converter
+    Notes: Converted from Artemis NCL format
+    Patch Version: 1.2
+    Patch:
+      - [ be32, 0xADDRESS, 0xVALUE ]
+
+📁 Project Structure
+text
+
+artemis-converter/
+├── artemis_converter.py    # Main application
+├── artemis_converter.db    # Database (auto-created)
+├── NCL_Files/              # Imported NCL storage
+├── User_Patches/           # Exported patches
+└── README.md               # This file
+
+🔧 Configuration
+Settings
+
+Access via ⚙️ Settings button:
+
+    Debug Mode: Enable detailed parsing output
+
+    Context menu settings
+
+    Display preferences
+
+Keyboard Shortcuts
+
+    Ctrl+C: Copy selected text
+
+    Ctrl+V: Paste from clipboard
+
+    Ctrl+A: Select all text
+
+    Right-click: Context menu with copy/paste options
+
+🐛 Known Issues (Alpha)
+
+    Some edge-case NCL files may not parse correctly
+
+    Large repositories may take time to index
+
+    UI may need optimization for very large cheat collections
+
+    Settings persistence between sessions is basic
 
