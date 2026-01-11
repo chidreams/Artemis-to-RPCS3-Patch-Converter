@@ -86,24 +86,21 @@ PPU-0000000000000000000000000000000000000000:
 
 ---
 
-## 🤝 Community
+🤝 Community
 
-YouTube: Chidreams Emulation Gameplay](https://www.youtube.com/c/ChidreamsEmulationGamePlay
+YouTube: Chidreams Emulation Gameplay
+https://www.youtube.com/c/ChidreamsEmulationGameplay
 
 GitHub: https://github.com/chidreams
 
-Discord: discord.gg/CUUva5FPzu
+Discord: https://discord.gg/CUUva5FPzu
 
----
-
-## 🔥 Version 1.0 Vision
+🔥 Version 1.0 Vision
 
 Version 1.0 is not about perfection.
 
 It’s about giving the community a solid foundation to grow from.
 
----
-
-## 📜 License
+📜 License
 
 MIT License — Free for community use.
