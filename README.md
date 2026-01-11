@@ -1,149 +1,105 @@
-# Artemis to RPCS3 Patch Converter (Alpha Release)
+# Artemis to RPCS3 Patch Converter (Alpha)
 
-![Python](https://img.shields.io/badge/python-3.7%2B-blue)
-![Status](https://img.shields.io/badge/status-alpha-yellow)
-![License](https://img.shields.io/badge/license-MIT-green)
-![Platform](https://img.shields.io/badge/platform-windows%20%7C%20linux%20%7C%20macOS-lightgrey)
+A tool for converting Artemis `.ncl` cheat files into RPCS3 **1.2-compatible** YAML patch format.
 
-A powerful tool for converting Artemis NCL cheat files into RPCS3 1.2-compatible YAML patch format. This alpha release focuses on core functionality with more features coming soon.
+> **Mission (2026):** Emulation knowledge belongs to everyone.
 
 ## ⚠️ Alpha Release Notice
-This is an **alpha release** - while functional, some features may be incomplete or undergo significant changes. Back up your data before use and report any issues you encounter.
+This is an alpha release. Some features may change. Back up your data and report issues.
 
-## 🚀 Features
+## Features
 
-### 🗃️ **Database Management**
-- **Smart File Indexing**: Automatically parse and organize NCL files with duplicate detection
-- **Intelligent Parsing**: Extract game metadata (serials, names, versions) from filenames
-- **Bulk Operations**: Import entire folders or Artemis repositories
-- **Cheat Extraction**: Parse NCL content to separate individual cheat codes with author credits
+### Database Management
+- Smart file indexing (duplicate detection)
+- Parse metadata (serial, name, version) from filenames
+- Bulk import (folders / Artemis repos)
+- Extract individual cheats with author credits
 
-### 🔄 **Converter Engine**
-- **RPCS3 1.2 Compliance**: Generate properly formatted YAML patches
-- **Multi-Format Support**: Regular codes, AoB (Array of Bytes), and special format codes
-- **Optional PPU Hash**: Works with or without PPU hash for testing
-- **Metadata Preservation**: Maintain game info, cheat names, and author credits
+### Converter Engine
+- RPCS3 1.2 YAML output
+- Supports regular codes + AoB (Array of Bytes) + special formats
+- Optional PPU hash (works with or without it)
+- Preserves metadata (game info, cheat names, author credits)
 
-### 📂 **File Management**
-- **Dual View Modes**: Browse by individual files or grouped by game
-- **Real-time Search**: Filter by game name, serial, or filename
-- **Cheat Library**: Save and organize converted patches
-- **Export Options**: Save patches as YAML files for RPCS3
+### File Management
+- Browse by file or grouped by game
+- Search by game name / serial / filename
+- Save patches to a local library
+- Export YAML files
 
-### 🎮 **Game Support**
-- **Multi-Region**: BLUS, BLES, NPUB, NPEB serial formats
-- **Version Handling**: Support for multiple game versions
-- **Cheat Organization**: Group cheats by game and version
+### Game Support
+- BLUS / BLES / NPUB / NPEB serials
+- Multiple versions per game
 
-## 📦 Installation
+## Installation
 
 ### Prerequisites
-- Python 3.7 or higher
-- Git (for cloning repository)
+- Python 3.7+
+- Git
 
-🖥️ Usage Guide
-1. Database Setup
+### Run
+```bash
+git clone https://github.com/chidreams/Artemis-to-RPCS3-Patch-Converter.git
+cd Artemis-to-RPCS3-Patch-Converter
+python artemis_converter.py
+Usage Guide
 
-    Click "Quick Import NCL" to add individual files
+Import
 
-    Use "Batch Import" for entire folders
+Quick Import NCL (single files)
 
-    "Import Artemis Repo" for existing Artemis databases
+Batch Import (folders)
 
-2. Browse Cheats
+Import Artemis Repo (existing Artemis databases)
 
-    Switch between "Show Files" and "Show by Game" views
+Browse
 
-    Use search box to filter results
+Toggle: “Show Files” vs “Show by Game”
 
-    Double-click files to view details and cheats
+Use search box to filter
 
-3. Convert to RPCS3 Format
+Convert
 
-    Select cheats and click "Add Selected Cheats"
+Select cheats → Add Selected Cheats
 
-    Fill in game metadata (Serial, Name, Version)
+Fill Serial / Name / Version
 
-    PPU Hash is optional (placeholder used if empty)
+PPU Hash optional (placeholder used if blank)
 
-    Click "Convert" to generate YAML
+Convert → generate YAML
 
-4. Save & Export
+Save / Export
 
-    "Save YAML File" to export patch
+Save YAML File (export)
 
-    "Save to Database" for library storage
+Save to Database (library)
 
-    Browse saved patches in "My Patches" tab   
-🛠️ Technical Details
-Database Schema
-sql
-
-games:        Game metadata and file information
-cheats:       Individual cheat codes linked to games
-user_patches: Saved RPCS3 patches
-indexed_files: File tracking with hash verification
-
-File Format Support
-
-    Input: .ncl (Artemis cheat files)
-
-    Output: .yaml (RPCS3 1.2 patch format)
-
-    Database: SQLite with WAL mode for performance
-
-YAML Output Format
-yaml
+Browse saved patches in “My Patches”
 
 PPU-0000000000000000000000000000000000000000:
   "Patch Name":
     Games:
       "Game Name":
-        BLUS12345: [ "01.00" ]
-    Author: NCL Converter
-    Notes: Converted from Artemis NCL format
-    Patch Version: 1.2
+        BLUS12345: ["01.00"]
+    Author: "NCL Converter"
+    Notes: "Converted from Artemis NCL format"
+    Patch Version: "1.2"
     Patch:
       - [ be32, 0xADDRESS, 0xVALUE ]
 
-📁 Project Structure
-text
+Project Structure
+Artemis-to-RPCS3-Patch-Converter/
+├─ artemis_converter.py
+├─ README.md
+└─ LICENSE
 
-artemis-converter/
-├── artemis_converter.py    # Main application
-├── artemis_converter.db    # Database (auto-created)
-├── NCL_Files/              # Imported NCL storage
-├── User_Patches/           # Exported patches
-└── README.md               # This file
+Known Issues (Alpha)
 
-🔧 Configuration
-Settings
+Some edge-case NCL files may not parse
 
-Access via ⚙️ Settings button:
+Large repos may take time to index
 
-    Debug Mode: Enable detailed parsing output
+UI optimization ongoing
 
-    Context menu settings
-
-    Display preferences
-
-Keyboard Shortcuts
-
-    Ctrl+C: Copy selected text
-
-    Ctrl+V: Paste from clipboard
-
-    Ctrl+A: Select all text
-
-    Right-click: Context menu with copy/paste options
-
-🐛 Known Issues (Alpha)
-
-    Some edge-case NCL files may not parse correctly
-
-    Large repositories may take time to index
-
-    UI may need optimization for very large cheat collections
-
-    Settings persistence between sessions is basic
+License
 
