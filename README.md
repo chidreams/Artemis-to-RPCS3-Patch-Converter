@@ -1,105 +1,103 @@
-# Artemis to RPCS3 Patch Converter (Alpha)
+# Artemis to RPCS3 Patch Converter
 
-A tool for converting Artemis `.ncl` cheat files into RPCS3 **1.2-compatible** YAML patch format.
+**Community-driven Artemis → RPCS3 YAML patch converter.**
 
-> **Mission (2026):** Emulation knowledge belongs to everyone.
+> Chicago Dreams. Global Knowledge.
 
-## ⚠️ Alpha Release Notice
-This is an alpha release. Some features may change. Back up your data and report issues.
+---
 
-## Features
+## 🚀 Project Status
 
-### Database Management
-- Smart file indexing (duplicate detection)
-- Parse metadata (serial, name, version) from filenames
-- Bulk import (folders / Artemis repos)
-- Extract individual cheats with author credits
+**Current:** Alpha  
+**Next Release:** 🔥 **Version 1.0 — Coming Soon**
 
-### Converter Engine
-- RPCS3 1.2 YAML output
-- Supports regular codes + AoB (Array of Bytes) + special formats
-- Optional PPU hash (works with or without it)
-- Preserves metadata (game info, cheat names, author credits)
+Version 1.0 will mark the first stable community release of this tool, focused on reliability, clarity, and open knowledge sharing.
 
-### File Management
-- Browse by file or grouped by game
-- Search by game name / serial / filename
-- Save patches to a local library
-- Export YAML files
+---
 
-### Game Support
-- BLUS / BLES / NPUB / NPEB serials
-- Multiple versions per game
+## 🌍 Mission
 
-## Installation
+This project exists for one simple reason:
 
-### Prerequisites
-- Python 3.7+
-- Git
+> **Emulation knowledge belongs to everyone.**
 
-### Run
-```bash
-git clone https://github.com/chidreams/Artemis-to-RPCS3-Patch-Converter.git
-cd Artemis-to-RPCS3-Patch-Converter
-python artemis_converter.py
-Usage Guide
+No gatekeeping.  
+No paywalls.  
+No locked communities.
 
-Import
+This tool is built to help convert Artemis NCL cheat databases into modern **RPCS3 1.2 YAML patch format**, making PS3 cheat research accessible to everyone.
 
-Quick Import NCL (single files)
+---
 
-Batch Import (folders)
+## 🎯 What This Tool Does
 
-Import Artemis Repo (existing Artemis databases)
+- Converts Artemis `.ncl` cheat files to RPCS3 YAML patch format  
+- Supports multiple game serials and versions  
+- Preserves cheat names, structure, and metadata  
+- Allows optional PPU hash usage  
+- Enables bulk database importing  
+- Creates clean, readable RPCS3-compatible patch files  
 
-Browse
+---
 
-Toggle: “Show Files” vs “Show by Game”
+## 🛠 Supported Platforms
 
-Use search box to filter
+- RPCS3 (PS3)
+- Artemis Cheat Databases
+- Future expansion planned
 
-Convert
+---
 
-Select cheats → Add Selected Cheats
+## 📦 Planned for Version 1.0
 
-Fill Serial / Name / Version
+✔ Plugin-ready architecture  
+✔ Cleaner UI layout  
+✔ Improved database handling  
+✔ Better YAML validation  
+✔ Community template support  
+✔ Documentation polish  
+✔ Bug fixes and stability pass  
 
-PPU Hash optional (placeholder used if blank)
+---
 
-Convert → generate YAML
+## 🧠 Philosophy
 
-Save / Export
+This is not just a converter.
 
-Save YAML File (export)
+This is a **learning tool**, a **research platform**, and a **community foundation** for PS3 emulation cheat development.
 
-Save to Database (library)
+Every feature is built to help users understand what they are converting — not just press a button.
 
-Browse saved patches in “My Patches”
+---
 
+## 📂 Example YAML Output
+
+```yaml
 PPU-0000000000000000000000000000000000000000:
-  "Patch Name":
+  "Infinite Health":
     Games:
-      "Game Name":
+      "Example Game":
         BLUS12345: ["01.00"]
-    Author: "NCL Converter"
+    Author: "Community"
     Notes: "Converted from Artemis NCL format"
     Patch Version: "1.2"
     Patch:
-      - [ be32, 0xADDRESS, 0xVALUE ]
+      - [ be32, 0x00123456, 0x60000000 ]
+---
+🤝 Community
 
-Project Structure
-Artemis-to-RPCS3-Patch-Converter/
-├─ artemis_converter.py
-├─ README.md
-└─ LICENSE
+YouTube: Chidreams Emulation Gameplay](https://www.youtube.com/c/ChidreamsEmulationGamePlay
 
-Known Issues (Alpha)
+GitHub: https://github.com/chidreams
 
-Some edge-case NCL files may not parse
+Discord: discord.gg/CUUva5FPzu
+---
+🔥 Version 1.0 Vision
 
-Large repos may take time to index
+Version 1.0 is not about perfection.
 
-UI optimization ongoing
+It’s about giving the community a solid foundation to grow from.
+---
+📜 License
 
-License
-
+MIT License — Free for community use.
