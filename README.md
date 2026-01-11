@@ -70,22 +70,6 @@ Every feature is built to help users understand what they are converting — not
 
 ---
 
-## 📂 Example YAML Output
-
-```yaml
-PPU-0000000000000000000000000000000000000000:
-  "Infinite Health":
-    Games:
-      "Example Game":
-        BLUS12345: ["01.00"]
-    Author: "Community"
-    Notes: "Converted from Artemis NCL format"
-    Patch Version: "1.2"
-    Patch:
-      - [ be32, 0x00123456, 0x60000000 ]
-
----
-
 🤝 Community
 
 YouTube: Chidreams Emulation Gameplay
